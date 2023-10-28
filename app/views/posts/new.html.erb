@@ -1,0 +1,11 @@
+<h1>新規投稿ページ</h1>
+<%# mthod = posuはHTTPメソッドとして？ %>
+<%# <form action ="/posts" method = "post">
+  <input type = "text" name = "content">
+  <input type = "submit" value = "投稿する">
+</form> %>
+<%# urlはルーティングのどの指示へ送るかを決める(ルーティングのputs /pustsと繋がる) methodはHTTPで使用するメソッド（ルーティングのputs /pustsと繋がる） local:trueはリモート通信の無効化 fomeの変数をヘルパーメソッドのもとにする%>
+<%= form_with url:"/posts" , method: :post, local:true do |form| %>
+  <%=form.text_field :content%>
+  <%=form.submit "投稿する"%>
+<% end %>
